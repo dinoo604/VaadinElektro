@@ -2,19 +2,41 @@ package com.elektrotechniek.webapp.backend;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Size;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Student {
 
     @Id
+    @NotNull
     private Integer studentennummer;
+
+    @NotNull
     private String naam;
+
+    @NotNull
     private String achternaam;
+
+    @NotNull
+    @Min(value = 2010, message = "Cohort mag niet minder dan 2010 zijn")
+    @Max(value = 2099, message = "Cohort mag niet meer dan 2099 zijn")
     private Integer cohort;
+
+    @Min(value = 2010, message = "Cohort mag niet minder dan 2010 zijn")
+    @Max(value = 2099, message = "Cohort mag niet meer dan 2099 zijn")
     private Integer afstudeer_jaar;
+
     private String email;
+
+    @NotNull
     private Character geslacht;          //TODO: limit to 2 Characters (m, v)
+
     private Character orientatie;        //TODO: limit to 3 Characters (e, t, i)
+
+    @NotNull
     private Character studie_status;
 
     public Student() {
