@@ -42,4 +42,8 @@ public class StudentService {
     public void delete(Student student){
         studentRepository.delete(student);
     }
+
+    public long countStudent(){
+        return studentRepository.count();
+    }
 }
