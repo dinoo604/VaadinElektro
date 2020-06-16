@@ -19,11 +19,16 @@ public class StudentService {
         return studentRepository.findAll();
     }
 
-    public List<Student> findAll(String searchText){
-        if (searchText == null || searchText.isEmpty()){
+    public List<Student> findAll(String searchText, String orientatieFilter){
+
+        if ((searchText == null || searchText.isEmpty())
+                && orientatieFilter == null){
             return studentRepository.findAll();
-        } else{
-            return studentRepository.search(searchText);
+        } else if(orientatieFilter == null && searchText != null){
+            return studentRepository.search(searchText, "");
+        }
+        else{
+            return studentRepository.search(searchText, orientatieFilter);
         }
     }
 

@@ -29,9 +29,9 @@ public class StudentForm extends FormLayout{
     EmailField email = new EmailField("email");
     IntegerField cohort = new IntegerField("cohort");
     IntegerField afstudeer_jaar = new IntegerField("jaar van afstudeer");
-    ComboBox<Character> orientatie = new ComboBox<>();
-    ComboBox<Character> geslacht = new ComboBox<>();
-    ComboBox<Character> studie_status = new ComboBox<>();
+    ComboBox<String> orientatie = new ComboBox<>();
+    ComboBox<String> geslacht = new ComboBox<>();
+    ComboBox<String> studie_status = new ComboBox<>();
     Button save = new Button("save");
     Button delete = new Button("delete");
     Button cancel = new Button("close");
@@ -62,11 +62,12 @@ public class StudentForm extends FormLayout{
     }
 
     public void setupComponents() {
-        orientatie.setItems('e', 'i', 't');
+        orientatie.setItems("Energietechniek",
+                "informatica", "telecommunicatie");
         orientatie.setLabel("orientatie");
-        geslacht.setItems('m', 'v');
+        geslacht.setItems("man", "vrouw");
         geslacht.setLabel("geslacht");
-        studie_status.setItems('a', 'd', 'v');
+        studie_status.setItems("Actief", "Voldaan", "Inactief");
         studie_status.setLabel("status");
     }
 

@@ -3,6 +3,7 @@ package com.elektrotechniek.webapp.frontend;
 import com.elektrotechniek.webapp.backend.Student;
 import com.elektrotechniek.webapp.backend.StudentService;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.grid.GridVariant;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
@@ -21,6 +22,8 @@ public class ListView extends VerticalLayout{
     Grid<Student> grid = new Grid<>(Student.class);
     TextField search = new TextField();
     Button add;
+    ComboBox<String> orientatieSelect = new ComboBox<>();
+    ComboBox<String> statusSelect = new ComboBox<>();
 
     public ListView(StudentService studentService) {    //studentservice autowired to constructor
         this.studentService = studentService;
@@ -42,6 +45,7 @@ public class ListView extends VerticalLayout{
     private void initGrid() {
         grid.addClassName("student-grid");
         grid.addThemeVariants(GridVariant.LUMO_ROW_STRIPES);
+        //grid.setSizeFull();
         grid.setColumns("studentennummer", "naam",
                 "achternaam", "email", "orientatie");
         grid.asSingleSelect().addValueChangeListener(
@@ -50,7 +54,8 @@ public class ListView extends VerticalLayout{
     }
 
     private void updateGrid() {
-        grid.setItems(studentService.findAll(search.getValue()));
+        grid.setItems(studentService.findAll(search.getValue(),
+                orientatieSelect.getValue()));
     }
 
     public void editStudent(Student student){
@@ -76,7 +81,6 @@ public class ListView extends VerticalLayout{
     }
 
     private void saveStudent(StudentForm.SaveEvent event){
-        System.out.println("haaai");
         studentService.save(event.getStudent());
         updateGrid();
         closeEditor();
@@ -89,12 +93,17 @@ public class ListView extends VerticalLayout{
     }
 
     public HorizontalLayout buttonLayout(){
+        orientatieSelect.setPlaceholder("orientatie");
+        orientatieSelect.setClearButtonVisible(true);
+        orientatieSelect.setItems("Energietechniek",
+                "informatica", "telecommunicatie");
+        orientatieSelect.addValueChangeListener(e -> updateGrid());
         search.setPlaceholder("Search");
         search.setClearButtonVisible(true);
         search.setValueChangeMode(ValueChangeMode.LAZY);
         search.addValueChangeListener(e -> updateGrid());
         add = new Button("add");
         add.addClickListener(e -> openEditor());
-        return new HorizontalLayout(search, add);
+        return new HorizontalLayout(search, orientatieSelect, add);
     }
 }

@@ -32,12 +32,12 @@ public class Student {
     private String email;
 
     @NotNull
-    private Character geslacht;          //TODO: limit to 2 Characters (m, v)
+    private String geslacht;
 
-    private Character orientatie;        //TODO: limit to 3 Characters (e, t, i)
+    private String orientatie;
 
     @NotNull
-    private Character studie_status;
+    private String studie_status;
 
     public Student() {
         super();
@@ -45,7 +45,7 @@ public class Student {
 
     public Student(Integer studentennummer, String naam, String achternaam,
                    Integer cohort, Integer afstudeer_jaar, String email,
-                   Character geslacht, Character orientatie, Character studie_status) {
+                   String geslacht, String orientatie, String studie_status) {
         this.studentennummer = studentennummer;
         this.naam = naam;
         this.achternaam = achternaam;
@@ -73,11 +73,11 @@ public class Student {
         this.email = email;
     }
 
-    public void setOrientatie(Character orientatie) {
+    public void setOrientatie(String orientatie) {
         this.orientatie = orientatie;
     }
 
-    public void setGeslacht(Character geslacht) {
+    public void setGeslacht(String geslacht) {
         this.geslacht = geslacht;
     }
 
@@ -89,7 +89,7 @@ public class Student {
         this.afstudeer_jaar = afstudeer_jaar;
     }
 
-    public void setStudie_status(Character studie_status) {
+    public void setStudie_status(String studie_status) {
         this.studie_status = studie_status;
     }
 
@@ -109,11 +109,11 @@ public class Student {
         return email;
     }
 
-    public Character getOrientatie() {
+    public String getOrientatie() {
         return orientatie;
     }
 
-    public Character getGeslacht() {
+    public String getGeslacht() {
         return geslacht;
     }
 
@@ -121,7 +121,7 @@ public class Student {
         return achternaam;
     }
 
-    public Character getStudie_status() {
+    public String getStudie_status() {
         return studie_status;
     }
 
