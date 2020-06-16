@@ -78,7 +78,7 @@ public class StudentForm extends FormLayout{
         delete.addClickListener(event ->
                 fireEvent(new DeleteEvent(this, binder.getBean())));
         delete.addThemeVariants(ButtonVariant.LUMO_ERROR);
-        cancel.addClickListener(event -> new CloseEvent(this));
+        cancel.addClickListener(event -> fireEvent(new CloseEvent(this)));
         cancel.addThemeVariants(ButtonVariant.LUMO_TERTIARY);
         cancel.addClickShortcut(Key.ESCAPE);
 
