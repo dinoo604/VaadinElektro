@@ -28,6 +28,11 @@ a[highlight] {
     margin: var(--lumo-space-m);
 }
 
+.dashboard-view .contact-stats {
+    font-size: 4em;
+    margin: 1em 0;
+}
+
 @media all and (max-width: 1100px) {
     .list-view.editing .toolbar,
     .list-view.editing .contact-grid {
