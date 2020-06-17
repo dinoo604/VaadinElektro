@@ -12,4 +12,6 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
             "OR cohort LIKE CONCAT(:search, '%'))" +
             "AND orientatie LIKE CONCAT('%', :orient, '%')", nativeQuery = true)
     List<Student> search(@Param("search") String searchText, @Param("orient") String orientatieFilter);
+
+    Student findStudentByStudentennummer(Integer id);
 }
