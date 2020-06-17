@@ -1,16 +1,14 @@
-package com.elektrotechniek.webapp.frontend;
+package com.elektrotechniek.webapp.frontend.views;
 
 import com.elektrotechniek.webapp.backend.Student;
-import com.elektrotechniek.webapp.backend.StudentService;
+import com.elektrotechniek.webapp.backend.service.StudentService;
+import com.elektrotechniek.webapp.frontend.MainLayout;
 import com.vaadin.flow.component.html.H1;
-import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.BeforeEvent;
 import com.vaadin.flow.router.HasUrlParameter;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 @Route(value = "student-information", layout = MainLayout.class)
 @PageTitle("student detail | elektro")

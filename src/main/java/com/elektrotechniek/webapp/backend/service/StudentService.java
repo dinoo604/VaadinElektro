@@ -1,9 +1,10 @@
-package com.elektrotechniek.webapp.backend;
+package com.elektrotechniek.webapp.backend.service;
 
+import com.elektrotechniek.webapp.backend.Student;
+import com.elektrotechniek.webapp.backend.repositories.StudentRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.logging.Logger;
 import java.util.logging.Level;
 

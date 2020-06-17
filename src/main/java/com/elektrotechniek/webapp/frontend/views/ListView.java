@@ -1,7 +1,8 @@
-package com.elektrotechniek.webapp.frontend;
+package com.elektrotechniek.webapp.frontend.views;
 
 import com.elektrotechniek.webapp.backend.Student;
-import com.elektrotechniek.webapp.backend.StudentService;
+import com.elektrotechniek.webapp.backend.service.StudentService;
+import com.elektrotechniek.webapp.frontend.MainLayout;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.combobox.ComboBox;

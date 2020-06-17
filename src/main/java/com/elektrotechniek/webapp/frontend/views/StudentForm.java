@@ -1,7 +1,7 @@
-package com.elektrotechniek.webapp.frontend;
+package com.elektrotechniek.webapp.frontend.views;
 
 import com.elektrotechniek.webapp.backend.Student;
-import com.elektrotechniek.webapp.backend.StudentService;
+import com.elektrotechniek.webapp.backend.service.StudentService;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
 import com.vaadin.flow.component.Key;
@@ -15,12 +15,7 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.data.binder.BeanValidationBinder;
 import com.vaadin.flow.data.binder.Binder;
-import com.vaadin.flow.data.binder.ValidationException;
-import com.vaadin.flow.data.converter.StringToIntegerConverter;
 import com.vaadin.flow.shared.Registration;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class StudentForm extends FormLayout{
     IntegerField studentennummer = new IntegerField("studentennummer");

@@ -1,5 +1,7 @@
-package com.elektrotechniek.webapp.backend;
+package com.elektrotechniek.webapp.backend.service;
 
+import com.elektrotechniek.webapp.backend.Vak;
+import com.elektrotechniek.webapp.backend.repositories.VakRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

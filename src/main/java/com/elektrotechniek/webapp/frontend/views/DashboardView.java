@@ -1,6 +1,7 @@
-package com.elektrotechniek.webapp.frontend;
+package com.elektrotechniek.webapp.frontend.views;
 
-import com.elektrotechniek.webapp.backend.StudentService;
+import com.elektrotechniek.webapp.backend.service.StudentService;
+import com.elektrotechniek.webapp.frontend.MainLayout;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;

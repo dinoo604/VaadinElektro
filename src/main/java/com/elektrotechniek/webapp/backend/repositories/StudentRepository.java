@@ -1,5 +1,6 @@
-package com.elektrotechniek.webapp.backend;
+package com.elektrotechniek.webapp.backend.repositories;
 
+import com.elektrotechniek.webapp.backend.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
