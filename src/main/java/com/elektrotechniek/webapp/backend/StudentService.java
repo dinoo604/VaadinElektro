@@ -3,6 +3,7 @@ package com.elektrotechniek.webapp.backend;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.logging.Logger;
 import java.util.logging.Level;
 
@@ -13,6 +14,10 @@ public class StudentService {
 
     public StudentService(StudentRepository studentRepository) {
         this.studentRepository = studentRepository;
+    }
+
+    public Student getStudentById(Integer id){
+        return studentRepository.findStudentByStudentennummer(id);
     }
 
     public List<Student> findAll() {
