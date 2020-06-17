@@ -2,6 +2,7 @@ package com.elektrotechniek.webapp.frontend;
 
 import com.elektrotechniek.webapp.backend.Student;
 import com.elektrotechniek.webapp.backend.StudentService;
+import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.grid.Grid;
@@ -45,12 +46,10 @@ public class ListView extends VerticalLayout{
     private void initGrid() {
         grid.addClassName("student-grid");
         grid.addThemeVariants(GridVariant.LUMO_ROW_STRIPES);
-        //grid.setSizeFull();
+        //grid.setHeight("100%");
         grid.setColumns("studentennummer", "naam",
                 "achternaam", "email", "orientatie");
-        grid.asSingleSelect().addValueChangeListener(
-                gridStudentComponentValueChangeEvent -> editStudent(
-                        gridStudentComponentValueChangeEvent.getValue()));
+        grid.addSelectionListener(e -> e.getFirstSelectedItem().ifPresent(this::showDetails));
     }
 
     private void updateGrid() {
@@ -105,5 +104,9 @@ public class ListView extends VerticalLayout{
         add = new Button("add");
         add.addClickListener(e -> openEditor());
         return new HorizontalLayout(search, orientatieSelect, add);
+    }
+
+    private void showDetails(Student student){
+        UI.getCurrent().navigate(StudentDetail.class, student.getStudentennummer());
     }
 }
