@@ -101,10 +101,6 @@ public class Student {
         return naam;
     }
 
-    public String getachternaam() {
-        return achternaam;
-    }
-
     public String getEmail() {
         return email;
     }
