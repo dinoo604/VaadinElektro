@@ -21,9 +21,11 @@ a[highlight] {
 
 .header{
     padding: 0 var(--lumo-space-m);
+    background-color: darkblue;
 }
 
 .header h1.logo {
+    color: whitesmoke;
     font-size: 1em;
     margin: var(--lumo-space-m);
 }
@@ -31,6 +33,23 @@ a[highlight] {
 .dashboard-view .contact-stats {
     font-size: 4em;
     margin: 1em 0;
+}
+
+.rapport-grid {
+    border-color: black;
+}
+
+.student-detail {
+    background-color: aliceblue;
+}
+
+.student-detail-primary-label {
+    font-size: large;
+    font-weight: bold;
+}
+
+.student-detail-secondary-label{
+    font-size: medium;
 }
 
 @media all and (max-width: 1100px) {
