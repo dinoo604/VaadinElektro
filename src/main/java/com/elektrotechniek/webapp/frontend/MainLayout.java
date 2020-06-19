@@ -14,8 +14,8 @@ import com.vaadin.flow.router.RouterLink;
 @CssImport("./shared-styles.css")
 public class MainLayout extends AppLayout {
     public MainLayout() {
-        createHeader();
         createDrawer();
+        createHeader();
     }
 
     public void createHeader(){
