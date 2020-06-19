@@ -2,10 +2,12 @@ package com.elektrotechniek.webapp.backend;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
 import javax.validation.constraints.NotNull;
+import java.util.Set;
 
 @Entity
 public class Student {
@@ -13,6 +15,9 @@ public class Student {
     @Id
     @NotNull
     private Integer studentennummer;
+
+    @OneToMany(mappedBy = "student")
+    Set<Rapport> rapports;
 
     @NotNull
     private String naam;

@@ -2,15 +2,20 @@ package com.elektrotechniek.webapp.backend;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import java.util.Set;
 
 @Entity
 public class Vak {
     @Id
     Integer idvak;
+
+    @OneToMany(mappedBy = "vak")
+    Set<Rapport> rapports;
 
     @NotEmpty(message = "field cannot be empty")
     String vak_naam;
