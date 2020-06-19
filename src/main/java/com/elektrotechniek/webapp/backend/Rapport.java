@@ -2,6 +2,7 @@ package com.elektrotechniek.webapp.backend;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 
 @IdClass(Rapport.class)
 @Entity
@@ -18,10 +19,10 @@ public class Rapport implements Serializable{
     Vak vak;
 
     @Id
-    private String periode;
+    @Temporal(TemporalType.DATE)
+    private java.util.Date datum;
 
-    @Id
-    private Integer jaar;
+
 
     private Float cijfer;
 
@@ -45,27 +46,19 @@ public class Rapport implements Serializable{
         this.vak = vak;
     }
 
-    public String getPeriode() {
-        return periode;
-    }
-
-    public void setPeriode(String periode) {
-        this.periode = periode;
-    }
-
-    public Integer getJaar() {
-        return jaar;
-    }
-
-    public void setJaar(Integer jaar) {
-        this.jaar = jaar;
-    }
-
     public Float getCijfer() {
         return cijfer;
     }
 
     public void setCijfer(Float cijfer) {
         this.cijfer = cijfer;
+    }
+
+    public Date getDatum() {
+        return datum;
+    }
+
+    public void setDatum(Date datum) {
+        this.datum = datum;
     }
 }

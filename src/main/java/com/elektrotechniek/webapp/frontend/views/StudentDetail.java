@@ -44,25 +44,15 @@ public class StudentDetail extends VerticalLayout implements HasUrlParameter<Int
         initGrid();
     }
 
-    /*
-     * TODO: filter in backend zodat alleen de laatste cijfer te zien zijn
-     *  de rest moet beschikbaar zijn na een click
-     */
     public void initGrid(){
-        /*grid.addColumn(rapport -> {
-            Vak vak = rapport.getVak();
-            return  vak == null ? "-": vak.getVak_naam();
-        }).setHeader("vak");*/
 
         //grid.setColumns("periode", "jaar", "cijfer");
         grid.addColumn(rapport -> {
             Vak vak = rapport.getVak();
             return  vak == null ? "-": vak.getVak_naam();
         }).setHeader("vak");
-        grid.addColumn(rapport -> rapport.getPeriode()).setHeader("periode");
-        grid.addColumn(rapport -> rapport.getJaar()).setHeader("jaar");
+        grid.addColumn(rapport -> rapport.getDatum()).setHeader("datum");
         grid.addColumn(rapport -> rapport.getCijfer()).setHeader("cijfer");
-
 
         grid.setItems(rapportService.selectByStudNummer(student.getStudentennummer()));
         add(grid);
